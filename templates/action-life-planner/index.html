@@ -1,1 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ═══ SEO META ═══ -->
+<title>Action Life Planner — All-in-One Notion Template | Data Action Studio</title>
+<meta name="description" content="The Action Life Planner is a complete Notion template for high-achievers who want to manage tasks, habits, goals, and daily time-blocks in one unified system. Built by Dr. Aaron R. Stewart.">
+<meta name="keywords" content="notion life planner template, action life planner notion, productivity notion template, daily planner notion, goal tracker notion, habit tracker notion template etsy">
+
+<!-- Open Graph (for social sharing & link previews) -->
+<meta property="og:title" content="Action Life Planner — All-in-One Notion Template">
+<meta property="og:description" content="Manage tasks, habits, goals, and daily time-blocks in one Notion workspace. Built by a professor and data scientist.">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://dataactionstudio.com/templates/action-life-planner/">
+<meta property="og:site_name" content="Data Action Studio">
+
+<!-- Canonical URL (important for SEO — tells Google this is the real page) -->
+<link rel="canonical" href="https://dataactionstudio.com/templates/action-life-planner/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal: #1D9E75;
+  --teal-light: #5DCAA5;
+  --teal-dark: #0F6E56;
+  --teal-glow: rgba(29,158,117,0.15);
+  --teal-subtle: rgba(29,158,117,0.08);
+  --bg: #0c0c0a;
+  --bg-2: #131311;
+  --bg-3: #1a1a17;
+  --bg-4: #212120;
+  --text: #f0efeb;
+  --text-2: #a8a69e;
+  --text-3: #636259;
+  --border: rgba(255,255,255,0.07);
+  --border-2: rgba(255,255,255,0.12);
+  --amber: #d4890a;
+  --amber-light: #f0b94a;
+  --font-display: 'Sora', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Lora', serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(29,158,117,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,158,117,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(12,12,10,0.90);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: var(--teal);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 500;
+  color: #fff; flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-size: 14px; font-weight: 600;
+  color: var(--text); letter-spacing: -0.01em;
+}
+
+.nav-logo-text span { color: var(--teal-light); }
+
+.nav-links {
+  display: flex; align-items: center;
+  gap: 2rem; list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px; color: var(--text-2);
+  text-decoration: none; transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--teal) !important;
+  color: #fff !important;
+  padding: 7px 16px; border-radius: 6px;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--teal-dark) !important; }
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb {
+  position: relative; z-index: 1;
+  padding: 80px 2rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breadcrumb-inner {
+  display: flex; align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px; color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+
+.breadcrumb-inner a {
+  color: var(--text-3); text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-inner a:hover { color: var(--teal-light); }
+
+.breadcrumb-sep { color: var(--text-3); }
+.breadcrumb-current { color: var(--text-2); }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  padding: 2.5rem 2rem 4rem;
+  z-index: 1;
+}
+
+.hero-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.hero-left {}
+
+.template-type-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--teal-light); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 1.25rem;
+  background: var(--teal-subtle);
+  border: 1px solid rgba(29,158,117,0.2);
+  padding: 4px 12px; border-radius: 100px;
+}
+
+.hero-title {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero-title em {
+  font-family: var(--font-serif);
+  font-weight: 400; font-style: italic;
+  color: var(--teal-light);
+}
+
+.hero-tagline {
+  font-size: 18px; color: var(--text-2);
+  font-weight: 300; line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 540px;
+}
+
+.hero-meta-row {
+  display: flex; align-items: center;
+  gap: 1.5rem; flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.meta-chip {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--text-3);
+}
+
+.meta-chip-dot {
+  width: 6px; height: 6px;
+  background: var(--teal); border-radius: 50%;
+}
+
+.hero-features-quick {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.feature-quick-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: var(--text-2);
+}
+
+.feature-quick-item::before {
+  content: '✓';
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  background: var(--teal-subtle);
+  border: 1px solid rgba(29,158,117,0.25);
+  border-radius: 50%;
+  font-size: 11px; color: var(--teal-light);
+  flex-shrink: 0;
+}
+
+/* ─── PURCHASE CARD (sticky sidebar) ─── */
+.purchase-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: sticky;
+  top: 80px;
+}
+
+.purchase-price {
+  font-family: var(--font-mono);
+  font-size: 36px; font-weight: 500;
+  color: var(--text); letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.purchase-price-note {
+  font-size: 12px; color: var(--text-3);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+}
+
+.btn-etsy {
+  display: block; width: 100%;
+  background: var(--teal);
+  color: #fff; text-decoration: none;
+  text-align: center;
+  padding: 14px 20px; border-radius: 8px;
+  font-size: 15px; font-weight: 600;
+  transition: all 0.2s; margin-bottom: 10px;
+  font-family: var(--font-display);
+}
+
+.btn-etsy:hover {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+}
+
+.btn-etsy-secondary {
+  display: block; width: 100%;
+  background: transparent;
+  color: var(--text-2); text-decoration: none;
+  text-align: center;
+  padding: 12px 20px; border-radius: 8px;
+  font-size: 13px; font-weight: 400;
+  border: 1px solid var(--border-2);
+  transition: all 0.2s; margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+}
+
+.btn-etsy-secondary:hover {
+  color: var(--text); border-color: rgba(255,255,255,0.25);
+  background: var(--bg-3);
+}
+
+.purchase-divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+.purchase-detail-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.purchase-detail-item {
+  display: flex; justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.purchase-detail-label { color: var(--text-3); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; }
+.purchase-detail-val { color: var(--text-2); font-size: 13px; }
+
+.purchase-guarantee {
+  margin-top: 1rem;
+  background: var(--teal-subtle);
+  border: 1px solid rgba(29,158,117,0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--teal-light);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ─── VIDEO SECTION ─── */
+.section {
+  position: relative; z-index: 1;
+  padding: 4rem 2rem;
+}
+
+.section-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--teal);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.2; margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 16px; color: var(--text-2);
+  font-weight: 300; line-height: 1.65;
+  max-width: 600px; margin-bottom: 2rem;
+}
+
+.video-wrapper {
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.video-wrapper iframe {
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+
+/* Placeholder shown when no YouTube ID is set yet */
+.video-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem;
+  background: var(--bg-3);
+}
+
+.video-placeholder-icon {
+  width: 64px; height: 64px;
+  background: var(--teal-subtle);
+  border: 1px solid rgba(29,158,117,0.25);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+
+.video-placeholder p {
+  font-family: var(--font-mono);
+  font-size: 12px; color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+
+/* ─── FEATURES DEEP DIVE ─── */
+.features-section { background: var(--bg-2); }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) { .features-grid { grid-template-columns: 1fr; } }
+
+.feature-card {
+  background: var(--bg-2);
+  padding: 2rem;
+  transition: background 0.25s;
+}
+
+.feature-card:hover { background: var(--bg-3); }
+
+.feature-icon {
+  width: 40px; height: 40px;
+  background: var(--teal-subtle);
+  border: 1px solid rgba(29,158,117,0.2);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 1rem;
+}
+
+.feature-name {
+  font-size: 16px; font-weight: 600;
+  margin-bottom: 8px; letter-spacing: -0.01em;
+}
+
+.feature-desc {
+  font-size: 13px; color: var(--text-2);
+  line-height: 1.65; font-weight: 300;
+}
+
+/* ─── WHO IT'S FOR ─── */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) { .audience-grid { grid-template-columns: 1fr; } }
+
+.audience-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex; gap: 14px;
+  transition: border-color 0.25s;
+}
+
+.audience-card:hover { border-color: var(--border-2); }
+
+.audience-emoji {
+  font-size: 28px; flex-shrink: 0;
+  line-height: 1;
+}
+
+.audience-title {
+  font-size: 15px; font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.audience-desc {
+  font-size: 13px; color: var(--text-2);
+  font-weight: 300; line-height: 1.55;
+}
+
+/* ─── WHAT'S INSIDE ─── */
+.inside-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) { .inside-layout { grid-template-columns: 1fr; } }
+
+.sheet-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.sheet-item {
+  display: flex; align-items: center;
+  gap: 12px; padding: 12px 14px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px; font-weight: 400;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.sheet-item:hover {
+  background: var(--bg-3);
+  border-color: var(--border-2);
+}
+
+.sheet-num {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-3);
+  min-width: 22px;
+}
+
+.sheet-name { flex: 1; color: var(--text-2); }
+
+.sheet-badge {
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500;
+  padding: 2px 8px; border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+.badge-new { background: var(--teal-subtle); color: var(--teal-light); border: 1px solid rgba(29,158,117,0.2); }
+.badge-core { background: var(--bg-4); color: var(--text-3); border: 1px solid var(--border); }
+
+.inside-right-note {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: 14px; color: var(--text-2);
+  line-height: 1.7; font-weight: 300;
+  margin-top: 1.5rem;
+}
+
+.inside-right-note strong { color: var(--text); font-weight: 600; }
+
+/* ─── FAQ ─── */
+.faq-list {
+  display: flex; flex-direction: column;
+  gap: 2px; max-width: 780px;
+}
+
+.faq-item {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+
+.faq-q {
+  width: 100%; background: none;
+  border: none; cursor: pointer;
+  padding: 1.1rem 1.25rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 500;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.faq-q:hover { background: var(--bg-3); }
+
+.faq-arrow {
+  font-size: 18px; color: var(--text-3);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s ease;
+  font-size: 14px; color: var(--text-2);
+  line-height: 1.7; font-weight: 300;
+  padding: 0 1.25rem;
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 1.25rem 1.1rem;
+}
+
+/* ─── RELATED PRODUCTS ─── */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+
+.related-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: block;
+}
+
+.related-card:hover {
+  border-color: var(--border-2);
+  background: var(--bg-3);
+  transform: translateY(-2px);
+}
+
+.related-type {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--teal);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.related-name {
+  font-size: 15px; font-weight: 600;
+  color: var(--text); margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.related-desc {
+  font-size: 12px; color: var(--text-3);
+  line-height: 1.55; font-weight: 300;
+}
+
+.related-price {
+  font-family: var(--font-mono);
+  font-size: 13px; color: var(--teal-light);
+  margin-top: 0.75rem;
+}
+
+/* ─── BOTTOM CTA ─── */
+.bottom-cta {
+  background: linear-gradient(135deg, var(--teal-dark) 0%, #0a4f3a 50%, var(--bg) 100%);
+  border-top: 1px solid rgba(29,158,117,0.3);
+  text-align: center;
+  padding: 80px 2rem;
+  position: relative; z-index: 1;
+}
+
+.bottom-cta-title {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: #fff; margin-bottom: 0.75rem;
+}
+
+.bottom-cta-sub {
+  font-size: 16px; color: rgba(255,255,255,0.6);
+  margin-bottom: 2rem; font-weight: 300;
+}
+
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--teal-dark);
+  text-decoration: none; padding: 14px 28px;
+  border-radius: 8px; font-size: 15px; font-weight: 600;
+  transition: all 0.2s; font-family: var(--font-display);
+}
+
+.btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-1px); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  position: relative; z-index: 1;
+}
+
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+
+.footer-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex; gap: 1.5rem; list-style: none;
+}
+
+.footer-links a {
+  font-size: 13px; color: var(--text-3);
+  text-decoration: none; transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--teal-light); }
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-3);
+  width: 100%; margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  max-width: 1100px; margin: 1rem auto 0;
+}
+
+/* ─── SCROLL ANIMATION ─── */
+.fade-up {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  width: 36px; height: 2px;
+  background: var(--teal);
+  border-radius: 1px; margin-bottom: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 2rem 1.25rem 3rem; }
+  .section { padding: 3rem 1.25rem; }
+  .nav-links { display: none; }
+  .purchase-card { position: static; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">DAS</div>
+    <span class="nav-logo-text">Data<span>Action</span>Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/templates/">Templates</a></li>
+    <li><a href="/#niches">Niches</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="https://www.etsy.com/shop/DataActionStudio" target="_blank" class="nav-cta">Shop on Etsy →</a></li>
+  </ul>
+</nav>
+
+<!-- ─── BREADCRUMB ─── -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/templates/">Templates</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Action Life Planner</span>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="template-type-badge">📋 Notion Template</div>
+
+      <h1 class="hero-title">
+        The Action Life Planner —<br>
+        <em>your whole life, one workspace.</em>
+      </h1>
+
+      <p class="hero-tagline">
+        Stop juggling apps. The Action Life Planner brings your daily schedule, recurring tasks, habits, and long-term goals into a single Notion system built for people who actually need to get things done.
+      </p>
+
+      <div class="hero-meta-row">
+        <div class="meta-chip"><span class="meta-chip-dot"></span> Instant download</div>
+        <div class="meta-chip"><span class="meta-chip-dot"></span> Works with free Notion</div>
+        <div class="meta-chip"><span class="meta-chip-dot"></span> 14 pages included</div>
+      </div>
+
+      <div class="hero-features-quick">
+        <div class="feature-quick-item">Daily time-block planner with morning, afternoon & evening sections</div>
+        <div class="feature-quick-item">Recurring task automation — set it once, it schedules itself</div>
+        <div class="feature-quick-item">Habit tracker with streak visualization and completion rates</div>
+        <div class="feature-quick-item">Goal dashboard with progress bars and milestone tracking</div>
+        <div class="feature-quick-item">Weekly & monthly review templates built in</div>
+      </div>
+    </div>
+
+    <!-- ─── PURCHASE CARD ─── -->
+    <div class="purchase-card">
+      <div class="purchase-price">$27</div>
+      <div class="purchase-price-note">One-time purchase · Instant digital download</div>
+
+      <!-- 
+        ★ UPDATE THIS LINK with your real Etsy listing URL 
+        Format: https://www.etsy.com/listing/XXXXXXX/action-life-planner
+      -->
+      <a href="https://www.etsy.com/shop/DataActionStudio" target="_blank" class="btn-etsy">
+        Get it on Etsy →
+      </a>
+      <a href="#video-demo" class="btn-etsy-secondary">
+        Watch the demo first ↓
+      </a>
+
+      <hr class="purchase-divider">
+
+      <ul class="purchase-detail-list">
+        <li class="purchase-detail-item">
+          <span class="purchase-detail-label">Format</span>
+          <span class="purchase-detail-val">Notion template link</span>
+        </li>
+        <li class="purchase-detail-item">
+          <span class="purchase-detail-label">Delivery</span>
+          <span class="purchase-detail-val">Instant (PDF with link)</span>
+        </li>
+        <li class="purchase-detail-item">
+          <span class="purchase-detail-label">Pages</span>
+          <span class="purchase-detail-val">14 pages / tabs</span>
+        </li>
+        <li class="purchase-detail-item">
+          <span class="purchase-detail-label">Requires</span>
+          <span class="purchase-detail-val">Notion free plan or above</span>
+        </li>
+        <li class="purchase-detail-item">
+          <span class="purchase-detail-label">Built by</span>
+          <span class="purchase-detail-val">Dr. Aaron R. Stewart</span>
+        </li>
+      </ul>
+
+      <div class="purchase-guarantee">
+        🔒 Sold through Etsy's secure checkout. Buyer protection included.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── VIDEO SECTION ─── -->
+<section class="section" id="video-demo">
+  <div class="section-inner">
+    <div class="section-label fade-up">See it in action</div>
+    <div class="section-divider fade-up stagger-1"></div>
+    <h2 class="section-title fade-up stagger-1">Full walkthrough video</h2>
+    <p class="section-sub fade-up stagger-2">
+      Watch a complete demo of the Action Life Planner — every tab, every formula, and how to set it up in under 10 minutes.
+    </p>
+
+    <div class="video-wrapper fade-up stagger-2">
+      <!--
+        ★ TO EMBED YOUR YOUTUBE VIDEO:
+        1. Go to your YouTube video
+        2. Click Share → Embed
+        3. Copy the src URL (looks like: https://www.youtube.com/embed/XXXXXXXXXXX)
+        4. Replace the entire <div class="video-placeholder"> block below with:
+           <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                   title="Action Life Planner walkthrough"
+                   allowfullscreen></iframe>
+      -->
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">▶</div>
+        <p>Add your YouTube embed URL here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES DEEP DIVE ─── -->
+<section class="section features-section" id="features">
+  <div class="section-inner">
+    <div class="section-label fade-up">What's inside</div>
+    <div class="section-divider fade-up stagger-1"></div>
+    <h2 class="section-title fade-up stagger-1">Every feature, explained</h2>
+    <p class="section-sub fade-up stagger-2">Built from 30 years of productivity research — not trend-chasing. Every section earns its place.</p>
+
+    <div class="features-grid fade-up stagger-2">
+
+      <div class="feature-card">
+        <div class="feature-icon">🗓️</div>
+        <div class="feature-name">Daily Time-Block Planner</div>
+        <div class="feature-desc">Structure your day into morning, afternoon, and evening blocks. Each block has a task slot, focus level indicator, and a notes field. No more vague to-do lists — this is time-boxed execution.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔁</div>
+        <div class="feature-name">Recurring Task Automation</div>
+        <div class="feature-desc">Set a task to repeat daily, weekly, or monthly and the template generates your upcoming schedule automatically. Built with Notion formulas — no integrations or third-party tools required.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-name">Habit Tracker with Streaks</div>
+        <div class="feature-desc">Track up to 10 habits per week with visual streak counters and a monthly completion rate dashboard. Color-coded progress bars update in real time as you check off your day.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-name">Goal Dashboard</div>
+        <div class="feature-desc">Set quarterly or annual goals with milestone breakdowns. Each goal has a progress bar, target date, and a linked task list — so every daily action connects back to a bigger objective.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-name">Weekly & Monthly Reviews</div>
+        <div class="feature-desc">Built-in review templates with reflection prompts, win tracking, and carry-forward task lists. Takes 10 minutes and replaces hours of scattered journaling.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-name">Quick Capture Inbox</div>
+        <div class="feature-desc">A frictionless inbox page for capturing thoughts, ideas, and tasks the moment they arrive. Sort them into the right section later — but never lose them in the first place.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT'S INSIDE (page list) ─── -->
+<section class="section" id="pages">
+  <div class="section-inner">
+    <div class="inside-layout">
+      <div class="fade-up">
+        <div class="section-label">All 14 pages</div>
+        <div class="section-divider" style="margin-bottom: 1.25rem;"></div>
+        <h2 class="section-title" style="font-size: 26px; margin-bottom: 1.5rem;">Everything that's included</h2>
+
+        <ul class="sheet-list">
+          <li class="sheet-item"><span class="sheet-num">01</span><span class="sheet-name">Home Dashboard</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">02</span><span class="sheet-name">Daily Planner</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">03</span><span class="sheet-name">Task Manager</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">04</span><span class="sheet-name">Recurring Tasks</span><span class="sheet-badge badge-new">Auto</span></li>
+          <li class="sheet-item"><span class="sheet-num">05</span><span class="sheet-name">Habit Tracker</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">06</span><span class="sheet-name">Goal Board</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">07</span><span class="sheet-name">Weekly Review</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">08</span><span class="sheet-name">Monthly Review</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">09</span><span class="sheet-name">Quick Capture Inbox</span><span class="sheet-badge badge-new">Auto</span></li>
+          <li class="sheet-item"><span class="sheet-num">10</span><span class="sheet-name">Project Tracker</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">11</span><span class="sheet-name">Notes & Knowledge Base</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">12</span><span class="sheet-name">Reading List</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">13</span><span class="sheet-name">Archive</span><span class="sheet-badge badge-core">Core</span></li>
+          <li class="sheet-item"><span class="sheet-num">14</span><span class="sheet-name">Setup Guide</span><span class="sheet-badge badge-new">Start here</span></li>
+        </ul>
+      </div>
+
+      <div class="fade-up stagger-2">
+        <div class="section-label">How to get started</div>
+        <div class="section-divider" style="margin-bottom: 1.25rem;"></div>
+        <h2 class="section-title" style="font-size: 26px; margin-bottom: 1rem;">Up and running in minutes</h2>
+        <p style="font-size: 14px; color: var(--text-2); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem;">
+          After purchase, you receive a PDF with your template link. Click it, then go to <strong style="color: var(--text);">File → Duplicate</strong> in Notion. The entire workspace — all 14 pages — copies into your Notion account in seconds.
+        </p>
+        <p style="font-size: 14px; color: var(--text-2); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem;">
+          Start with <strong style="color: var(--text);">Page 14: Setup Guide</strong>. It walks you through personalizing your habit list, entering your first goals, and setting up recurring tasks in under 10 minutes.
+        </p>
+
+        <div class="inside-right-note">
+          <strong>No coding. No integrations. No subscriptions.</strong><br><br>
+          The entire system runs on Notion's native formula engine. You need a free Notion account — nothing else. All formulas, automations, and dashboards are built in.
+        </div>
+
+        <a href="https://www.etsy.com/shop/DataActionStudio" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: 1.5rem; transition: background 0.2s;">
+          Buy now on Etsy — $27 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO IT'S FOR ─── -->
+<section class="section" style="background: var(--bg-2);" id="audience">
+  <div class="section-inner">
+    <div class="section-label fade-up">Who it's built for</div>
+    <div class="section-divider fade-up stagger-1"></div>
+    <h2 class="section-title fade-up stagger-1">Is this template right for you?</h2>
+    <p class="section-sub fade-up stagger-2">The Action Life Planner is designed for people managing more than a simple task list. If any of these sound familiar, this is for you.</p>
+
+    <div class="audience-grid fade-up stagger-2">
+      <div class="audience-card">
+        <div class="audience-emoji">👨‍🏫</div>
+        <div>
+          <div class="audience-title">Professors & academics</div>
+          <div class="audience-desc">Managing a course load, research projects, student meetings, and personal goals simultaneously — in one place, not four apps.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">🚀</div>
+        <div>
+          <div class="audience-title">Entrepreneurs & side-hustlers</div>
+          <div class="audience-desc">Juggling a day job, a business, and a life. This keeps the ventures moving without dropping personal priorities.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">🎯</div>
+        <div>
+          <div class="audience-title">Goal-driven professionals</div>
+          <div class="audience-desc">People who set ambitious annual goals and want a daily execution system that actually connects today's tasks to next year's wins.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-emoji">⚙️</div>
+        <div>
+          <div class="audience-title">Systems thinkers</div>
+          <div class="audience-desc">You've tried other productivity templates and they felt too simple. This one has the depth you've been looking for — without the setup complexity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-label fade-up">Common questions</div>
+    <div class="section-divider fade-up stagger-1"></div>
+    <h2 class="section-title fade-up stagger-1">FAQ</h2>
+
+    <div class="faq-list fade-up stagger-2">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need a paid Notion subscription?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">No. The Action Life Planner runs fully on Notion's free plan. All formulas, databases, and views are built with native Notion features available to every account — paid or free.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does delivery work?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">After purchase on Etsy, you'll receive a PDF download immediately. Inside is your Notion template link. Click it, then click "Duplicate" in the top-right corner of Notion to copy the entire workspace into your account. Takes about 30 seconds.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I share it with my team or family?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">Your license is for personal use on one Notion account. You're welcome to share the workspace with people inside your Notion team space. If you'd like multiple personal licenses, contact us on Etsy — we're happy to arrange that.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if I'm not happy with it?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">All sales are through Etsy, which has buyer protection built in. If something isn't working as described, message us directly through Etsy and we'll resolve it — fix the issue, provide additional guidance, or discuss a refund. We stand behind every template.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is this Mac, Windows, or mobile compatible?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">Yes — Notion runs on Mac, Windows, iOS, Android, and in any browser. The template works identically across all platforms since it's cloud-based. Some advanced views display differently on mobile, but all core functionality is fully accessible.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Who built this template?
+          <span class="faq-arrow">↓</span>
+        </button>
+        <div class="faq-a">Dr. Aaron R. Stewart — Technology Management Professor at Utah Valley University, published author of 3 books, and host of two podcasts. This template was built to manage his own workload as a professor, podcast host, and entrepreneur simultaneously. It's not a designer's interpretation of productivity — it's a practitioner's actual system.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── RELATED PRODUCTS ─── -->
+<section class="section" style="background: var(--bg-2);" id="related">
+  <div class="section-inner">
+    <div class="section-label fade-up">More from the studio</div>
+    <div class="section-divider fade-up stagger-1"></div>
+    <h2 class="section-title fade-up stagger-1">You might also like</h2>
+
+    <div class="related-grid fade-up stagger-2">
+      <a href="/templates/faculty-grade-tracker/" class="related-card">
+        <div class="related-type">📋 Notion Template</div>
+        <div class="related-name">Faculty Grade Tracker</div>
+        <div class="related-desc">Multi-course grading with weighted averages, attendance log, and end-of-semester export.</div>
+        <div class="related-price">$24</div>
+      </a>
+      <a href="/templates/entrepreneurship-os/" class="related-card">
+        <div class="related-type">📋 Notion Template</div>
+        <div class="related-name">Entrepreneurship OS</div>
+        <div class="related-desc">Manage multiple ventures, revenue goals, team tasks, and grant deadlines in one workspace.</div>
+        <div class="related-price">$49</div>
+      </a>
+      <a href="/templates/side-hustle-pl-tracker/" class="related-card">
+        <div class="related-type">📊 Google Sheets</div>
+        <div class="related-name">Side Hustle P&L Tracker</div>
+        <div class="related-desc">Monthly revenue vs expenses, profit by product line, and annual summary with live charts.</div>
+        <div class="related-price">$17</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BOTTOM CTA ─── -->
+<div class="bottom-cta">
+  <h2 class="bottom-cta-title">Ready to take action?</h2>
+  <p class="bottom-cta-sub">One template. Every part of your life, organized.</p>
+  <a href="https://www.etsy.com/shop/DataActionStudio" target="_blank" class="btn-white">
+    Get the Action Life Planner on Etsy — $27 →
+  </a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-brand nav-logo" style="text-decoration: none;">
+      <div class="nav-logo-mark">DAS</div>
+      <span class="nav-logo-text">Data<span>Action</span>Studio</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/templates/">All Templates</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="https://www.etsy.com/shop/DataActionStudio" target="_blank">Etsy Store</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    © 2025 Data Action Studio · Dr. Aaron R. Stewart · DataActionStudio.com
+  </div>
+</footer>
+
+<script>
+// ─── Scroll fade-in ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ─── FAQ accordion ───
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // open this one if it was closed
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
